@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método Francotirador 888</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@400;600;700&family=Good+Time&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --color-primary: rgba(28, 34, 56, 1);
+      --color-secondary1: rgba(15, 34, 126, 1);
+      --color-secondary2: rgba(212, 175, 55, 1);
+      --color-secondary3: rgba(155, 44, 44, 1);
+      --color-secondary4: rgba(242, 242, 242, 1);
+      --orange: rgb(251, 160, 38);
+      --text-dark: #3e3e3e;
+      --text-gray: rgb(106, 106, 106);
+      --text-light: rgb(137, 137, 137);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: #ffffff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .header {
+      background: var(--color-secondary4);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      max-height: 70px;
+    }
+
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .nav-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--color-secondary4);
+      padding: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav.active {
+      display: block;
+    }
+
+    .nav ul {
+      list-style: none;
+    }
+
+    .nav ul li {
+      margin-bottom: 15px;
+    }
+
+    .nav ul li a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn-academia {
+      display: inline-block;
+      padding: 15px 30px;
+      border: 2px solid var(--color-primary);
+      border-radius: 23px;
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--color-secondary4);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero-box {
+      background: white;
+      border-radius: 25px;
+      padding: 30px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-family: 'Good Time', cursive;
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 span {
+      font-size: 48px;
+      display: block;
+    }
+
+    .hero-link {
+      color: var(--text-dark);
+      font-size: 18px;
+      display: inline-block;
+      margin: 15px 0;
+    }
+
+    .hero-points p {
+      font-size: 18px;
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .hero-points .number {
+      font-family: 'Good Time', cursive;
+      font-size: 42px;
+    }
+
+    .highlight {
+      background: var(--orange);
+      padding: 2px 8px;
+    }
+
+    .price-tag {
+      font-family: 'Good Time', cursive;
+      font-size: 90px;
+      margin-top: 20px;
+    }
+
+    .price-tag span {
+      font-size: 20px;
+    }
+
+    .price-tag small {
+      display: block;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+      margin-top: 5px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--color-primary);
+      color: white;
+      font-family: 'Good Time', cursive;
+      font-size: 18px;
+      padding: 20px 40px;
+      border-radius: 20px;
+      text-decoration: none;
+      margin-top: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(28,34,56,0.3);
+    }
+
+    .hero-image {
+      margin-top: 30px;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 15px;
+    }
+
+    /* Support Section */
+    .support {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .support h2 {
+      font-family: 'Good Time', cursive;
+      font-size: 24px;
+    }
+
+    .support-text {
+      max-width: 700px;
+      margin: 20px auto 0;
+    }
+
+    .support-text p {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+
+    /* Three Columns */
+    .three-cols {
+      background: var(--color-secondary4);
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .three-cols-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .three-cols h3 {
+      font-family: 'Good Time', cursive;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .three-cols .highlight-text {
+      color: var(--orange);
+    }
+
+    /* Image Banner */
+    .image-banner {
+      background: url('assets/WhatsApp_Image_2023-08-18_at_12.36.05-2702681.jpeg') center/cover no-repeat;
+      min-height: 300px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+
+    .image-banner img {
+      max-width: 300px;
+    }
+
+    /* Formation Section */
+    .formation {
+      padding: 50px 20px;
+    }
+
+    .formation h2 {
+      font-family: 'Good Time', cursive;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .formation p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .formation .price-tag {
+      font-size: 70px;
+    }
+
+    /* Dark Section */
+    .dark-section {
+      background: var(--color-primary);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .dark-section h2 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: bold;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .dark-section p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 15px;
+      line-height: 1.7;
+    }
+
+    .dark-section strong {
+      font-weight: 700;
+    }
+
+    .btn-orange {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      padding: 18px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      border: 2px solid var(--orange);
+      margin-top: 25px;
+      transition: all 0.3s;
+    }
+
+    .btn-orange:hover {
+      background: transparent;
+      color: var(--orange);
+    }
+
+    /* Bio Section */
+    .bio {
+      padding: 50px 20px;
+      background: var(--color-secondary4);
+    }
+
+    .bio-image {
+      background: url('assets/Runway_2023-08-08T09_48_16.973Z_Expand_Image-1488109.jpg') center/cover no-repeat;
+      min-height: 250px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .bio h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .bio h1 .bg-white {
+      background: white;
+      padding: 0 5px;
+    }
+
+    .bio p {
+      font-family: 'Raleway', sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-gray);
+    }
+
+    .bio .logo-bio {
+      margin-top: 30px;
+    }
+
+    .bio .logo-bio img {
+      max-width: 200px;
+    }
+
+    .bio .social {
+      margin-top: 20px;
+    }
+
+    .bio .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #e1e1e1;
+      border-radius: 50%;
+      color: var(--color-primary);
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+
+    .bio .social a:hover {
+      background: var(--color-secondary1);
+      color: white;
+    }
+
+    /* Book Section */
+    .book {
+      background: rgb(222, 188, 186);
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .book h2 {
+      font-family: 'Good Time', cursive;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .book-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .book-image img {
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .book-text {
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .book-text h3 {
+      font-family: 'Good Time', cursive;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .book-text a {
+      display: block;
+      background: var(--color-primary);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      padding: 20px 40px;
+      border-radius: 23px;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .book-text a span {
+      display: block;
+      font-size: 14px;
+      opacity: 0.75;
+      margin-top: 5px;
+    }
+
+    .book-text img {
+      max-width: 150px;
+      margin-top: 15px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--color-primary);
+      color: white;
+      padding: 50px 20px 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      max-width: 200px;
+    }
+
+    .footer h3 {
+      font-family: 'Good Time', cursive;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: white;
+      font-family: 'Raleway', sans-serif;
+      font-size: 20px;
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 50%;
+      color: var(--color-primary);
+      font-size: 18px;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-bottom p {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .footer-legal {
+      margin-top: 20px;
+    }
+
+    .footer-legal a {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .footer-legal span {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      padding: 40px 20px;
+      background: var(--color-secondary4);
+    }
+
+    .disclaimer p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    /* Responsive - Tablet */
+    @media (min-width: 768px) {
+      .nav-toggle {
+        display: none;
+      }
+
+      .nav {
+        display: flex;
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .nav ul {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav ul li {
+        margin: 0;
+      }
+
+      .hero {
+        padding: 80px 20px;
+      }
+
+      .hero-box {
+        padding: 50px 40px;
+      }
+
+      .hero h2 {
+        font-size: 42px;
+      }
+
+      .hero h2 span {
+        font-size: 72px;
+      }
+
+      .three-cols-inner {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .three-cols {
+        padding: 80px 20px;
+      }
+
+      .formation {
+        padding: 80px 20px;
+      }
+
+      .bio-image {
+        min-height: 400px;
+      }
+
+      .book-content {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .footer-content {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .footer h3 {
+        text-align: center;
+      }
+    }
+
+    /* Responsive - Desktop */
+    @media (min-width: 1024px) {
+      .hero {
+        display: flex;
+        align-items: center;
+        padding: 60px 0;
+      }
+
+      .hero-inner {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .hero-box {
+        flex: 1;
+        max-width: 55%;
+        margin: 0;
+        text-align: left;
+        padding: 40px;
+      }
+
+      .hero-image-col {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .hero-image {
+        margin: 0;
+      }
+
+      .hero-image img {
+        border-radius: 25px;
+      }
+
+      .support {
+        padding: 80px 20px;
+      }
+
+      .bio {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+      }
+
+      .bio-image {
+        flex: 0 0 32%;
+        min-height: 500px;
+        margin: 0;
+      }
+
+      .bio-content {
+        flex: 1;
+      }
+
+      .bio h1 {
+        font-size: 60px;
+      }
+
+      .formation {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .formation-content {
+        flex: 1;
+      }
+
+      .formation .formation-image {
+        flex: 0 0 50%;
+      }
+
+      .formation .formation-image img {
+        max-width: 100%;
+      }
+    }
+
+    /* Spacer */
+    .spacer {
+      height: 50px;
+    }
+
+    .spacer-lg {
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <img src="assets/logo_scalper_negro_2023-6905641.png" alt="Antonio Scalper">
+      </a>
+      <div class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">FORMACIÓN PRESENCIAL</a></li>
+          <li><a href="#">Formadores</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+        <a href="#" class="btn-academia">Academia</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-box">
+          <h2>
+            <span>Consigue las tres fuentes de riqueza infinita con</span>
+            Método francotirador
+          </h2>
+          <a href="#" class="hero-link">¿Que diferencia hay con el Método Francotirador 24/7?</a>
+          
+          <div class="hero-points">
+            <p><span class="number">1</span> Identifica el Punto exacto de entrada y salida en tu operativa de scalping.</p>
+            <p><span class="number">2</span> <span class="highlight">Soporte</span> <span class="highlight">1 AÑO</span> con operativa en <u>directo.</u></p>
+            <p><span class="number">3</span> Avanza con tu desarrollo personal y financiero.</p>
+          </div>
+
+          <div class="price-tag">
+            888<span>€</span>
+            <small>SOPORTE ILIMITADO</small>
+          </div>
+
+          <a href="#" class="btn-primary">Método Francotirador 888</a>
+
+          <div class="spacer"></div>
+        </div>
+
+        <div class="hero-image-col">
+          <div class="hero-image">
+            <img src="assets/logo_scalper_2023-6905641.png" alt="Logo Scalper">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Section -->
+  <section class="support">
+    <div class="container">
+      <h2>soporte 1 año</h2>
+      <div class="support-text">
+        <p>¿Qué significa soporte durante 1 año?</p>
+        <p>Todas las semanas tendrás dos clases de soporte, donde podrás preguntar tus dudas en directo e interactuar con los demás alumnos/as, ya que disponemos de una comunidad muy comprometida.</p>
+        <p>En estas clases de soporte también haré trading en directo, análisis y situación del mercado y mucho más.</p>
+        <p>Si no estás acostumbrado/a a tener un buen soporte, solo te diré que aquí dicho seguimiento es <span class="highlight">GRATIS durante 1 año</span>. Si, has leído bien. Puedes estar en la escuela y asistir a las clases de soporte para siempre <span class="highlight">SIN PAGAR NADA MÁS.</span></p>
+        <p>Tanto la formación como las clases de soporte se realizan en directo mediante la aplicación Zoom para garantizar que los conceptos llegan correctamente y tener una mayor cercanía contigo. Solo así saldrás de la formación mejor preparado/a.</p>
+        <p>También estarás dentro del grupo privado de Telegram, donde estarás informado/a de todo:</p>
+        <p>• Noticias<br>• Clases de soporte<br>• Entradas al mercado aplicando lo aprendido<br>• Y muchísimo más……</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Columns -->
+  <section class="three-cols">
+    <div class="container">
+      <div class="three-cols-inner">
+        <div>
+          <h3>Formación directa sesiones zoom con antonio scalper</h3>
+        </div>
+        <div>
+          <h3 class="highlight-text">Te acompaño en obtener la mejor mentalidad de crecimiento</h3>
+        </div>
+        <div>
+          <h3>Forma parte de una comunidad de traders rentables</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formation Section -->
+  <section class="formation">
+    <div class="container">
+      <div class="formation-content">
+        <img src="assets/3_888-1406883.png" alt="3_888" style="max-width: 100%; margin-bottom: 30px;">
+        <h2>¿CÓMO SE REALIZA LA FORMACIÓN?</h2>
+        <p>Aprende a dominar el mercado de futuros del Nasdaq 100. Te enseñaré a operar un solo activo para que sepas cómo reacciona, dónde intenta engañarnos y cuáles son los mejores momentos para operar. Mi experiencia me ha demostrado que enfocarse en un solo activo es más efectivo que intentar operar cientos.</p>
+        <p style="margin-top: 15px; font-weight: bold;">Hazte un profesional de uno y verás resultados.</p>
+        
+        <div class="price-tag" style="margin-top: 40px;">
+          888<span>€</span>
+          <small>soporte 1 año</small>
+        </div>
+
+        <a href="#" class="btn-primary">Método Francotirador 888</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer-lg"></div>
+
+  <!-- Dark Section -->
+  <section class="dark-section">
+    <div class="container">
+      <h2>Antonio Scalper</h2>
+      <p>Mi nombre es Antonio Scalper y estoy especializado en la operativa en scalping y la pongo en práctica en el mercado de <strong>futuros del Nasdaq 100</strong>.</p>
+      <p>Tengo más de 10 años de experiencia en los mercados financieros donde utilizo el tan famoso método francotirador. Método donde todos los alumnos entran a la vez en el mismo punto exacto. Como ves, conseguir algo así tiene una potencia espectacular.</p>
+      <p><strong>¿Pero cómo conseguí llegar a dominar un método así, donde tantas personas entran igual?</strong></p>
+      
+      <a href="#bio" class="btn-orange">Saber más sobre Antonio</a>
+    </div>
+  </section>
+
+  <!-- Bio Section -->
+  <section class="bio" id="bio">
+    <div class="container">
+      <div class="bio-image"></div>
+      <div class="bio-content">
+        <h1><span class="bg-white">¿</span><span class="bg-white">Quién soy</span><span class="bg-white">?</span></h1>
+        <p>Hola Trader...</p>
+        <p style="margin-top: 20px;">Mi nombre es Antonio Scalper y estoy <strong>especializado en la operativa en scalping</strong> y la pongo en práctica en el mercado de <strong>futuros del Nasdaq 100</strong>.</p>
+        <p style="margin-top: 20px;">Tengo <strong>más de 10 años de experiencia en los mercados financieros</strong> donde utilizo el tan famoso método francotirador. Método donde todos los alumnos entran a la vez en el mismo punto exacto. Como ves, conseguir algo así tiene una potencia espectacular.</p>
+        <p style="margin-top: 20px;">¿Pero cómo conseguí llegar a dominar un método así, donde tantas personas entran igual?</p>
+        
+        <div class="logo-bio">
+          <img src="assets/logo_scalper_2023-6905641.png" alt="Logo">
+        </div>
+
+        <div class="social">
+          <a href="https://www.instagram.com/antonio_scalper/?hl=es" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Section -->
+  <section class="book">
+    <div class="container">
+      <h2>Consigue mi nuevo libro</h2>
+      <div class="book-content">
+        <div class="book-image">
+          <img src="assets/QR_comunidad_Antonio-removebg-preview-2867777.png" alt="QR Code">
+        </div>
+        <div class="book-text">
+          <h3>Únete a nuestra comunidad de mi libro</h3>
+          
+          <div class="book-image">
+            <img src="assets/358343147_3625014197819842_7526971685211693275_n-1659443.jpg" alt="Comunidad">
+          </div>
+          
+          <a href="https://www.amazon.es/dp/B0CGFRFLH8" target="_blank">
+            Comprar Libro
+            <span>Amazon</span>
+          </a>
+          
+          <div class="book-image">
+            <img src="assets/Amazon_Books_logo.svg-2216157.png" alt="Amazon Books">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="disclaimer">
+    <div class="container">
+      <p><strong>Declaración de Riesgo:</strong> La operación de futuros sobrelleva riesgos substanciales y no es para todos los inversionistas. Un inversionista, podría, potencialmente perder todo o más de la inversión inicial. Capital de Riesgo, es dinero que puede ser perdido, sin poner en juego la seguridad financiera o estilo de vida de la persona. Solo capital de riesgo debe ser utilizado para trading, y solo aquellas personas con suficiente capital de riesgo deben considerar trading. Resultados pasados, no son necesariamente indicativos de resultados futuros.</p>
+      <p><strong>Declaración de Resultados Hipotéticos:</strong> Resultados hipotéticos de rendimiento deben tener muchas limitaciones inherentes, algunas de las cuales se describen a continuación. No se debe hacer representación de que alguna de las cuentas va o es probable que tenga resultados similares a los mostrados; de hecho, hay diferencias frecuentes entre los resultados hipotéticos y los resultados actuales obtenidos por cualquier programa de trading.</p>
+      <p>El uso de cualquier robot de trading adquirido a través de nuestra plataforma conlleva riesgos financieros significativos.</p>
+      <p><strong>Riesgo financiero:</strong> El usuario reconoce y acepta que la negociación de instrumentos financieros, incluidos, entre otros, valores, divisas, criptomonedas y materias primas, conlleva un riesgo significativo de pérdida de capital. Los resultados obtenidos a través del uso de robots de trading no garantizan beneficios y pueden resultar en pérdidas financieras sustanciales.</p>
+      <p><strong>Decisión de inversión:</strong> El usuario es el único responsable de tomar decisiones de inversión y de los resultados obtenidos al utilizar los robots de trading adquiridos.</p>
+      <p><strong>Rendimiento pasado:</strong> El rendimiento pasado de los robots de trading no garantiza resultados futuros.</p>
+      <p><strong>Limitación de responsabilidad:</strong> La empresa no será responsable de ninguna pérdida directa, indirecta, incidental, especial o consecuente.</p>
+      <p>El soporte será ilimitado hasta que el alumno/a decida abandonarlo de forma voluntaria o la actividad de la empresa deje de existir.</p>
+      <p>La empresa se reserva el derecho de la no venta de cualquiera de los servicios y herramientas que tiene la escuela a cualquier usuario.</p>
+      <p>Las formaciones grabadas 24/7 tendrán una duración de uso y acceso de 6 meses a partir de la fecha de compra.</p>
+      <p><strong>Aceptación del riesgo:</strong> Al adquirir y utilizar los robots de trading, el usuario acepta y asume todos los riesgos asociados con las operaciones financieras automatizadas y libera a la empresa de cualquier responsabilidad por pérdidas financieras.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/logo_scalper_2023-6905641.png" alt="Antonio Scalper">
+        </div>
+        <div>
+          <h3>Formaciones</h3>
+        </div>
+        <div>
+          <h3>Enlaces</h3>
+          <div class="footer-links">
+            <a href="#">Sobre Antonio</a>
+            <a href="#">Contacto</a>
+            <a href="#">Carrito de Compra</a>
+          </div>
+        </div>
+        <div>
+          <h3>Redes Sociales</h3>
+          <div class="social-links">
+            <a href="https://www.instagram.com/antonio_scalper/?hl=es" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025. Antonio Scalper. Todos los derechos reservados</p>
+        <div class="footer-legal">
+          <a href="#">Aviso Legal</a>
+          <span> | </span>
+          <a href="#">Política de Privacidad</a>
+          <span> | </span>
+          <a href="#">Política de Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.querySelector('.nav').classList.toggle('active');
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
