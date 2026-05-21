@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icon-512.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <meta name="google" content="notranslate">
+    
+    <title>Titán Pro | Gestión de Taller</title>
+    
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#18181b" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/icon-512.png">
+    <!-- 🚀 INICIO: ETIQUETAS DE CÓDIGO SEO TÉCNICO (Nicho: Celulares) -->
+    <title>Titán Pro | Software y Gestor para Talleres de Celulares</title>
+    
+    <meta name="description" content="La plataforma en la nube definitiva para administrar tu taller de reparación de celulares y servicio técnico. Cotizaciones, punto de venta e inventario en México." />
+    
+    <meta name="keywords" content="gestor de talleres, reparación de celulares, software para servicio técnico, punto de venta celulares, Titán Pro, administración de talleres, Hidalgo, México" />
+    
+    <meta name="author" content="Wolf Miranda" />
+    
+    <!-- Le decimos a los robots de búsqueda que sí lean el código de esta página -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- 📱 Etiquetas Open Graph (Para previsualizaciones en código al compartir) -->
+    <meta property="og:title" content="Titán Pro | Gestor de Talleres de Celulares" />
+    <meta property="og:description" content="Optimiza la administración de tu servicio técnico con nuestra solución en la nube." />
+    <meta property="og:type" content="website" />
+    <!-- 🛑 FIN: ETIQUETAS DE CÓDIGO SEO TÉCNICO -->
+    <script type="module" crossorigin src="/assets/index-BbsZ6W-_.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C0fCl36P.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- 🧬 NEXUS CRM TRACKING CHIP: Titán Pro -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+<script>
+    const nexusConfig = {
+        apiKey: "AIzaSyCgT7J932ldhXThJOeFt3fCuPh3LrdF0a4",
+        authDomain: "nexuscrm-46c45.firebaseapp.com",
+        projectId: "nexuscrm-46c45",
+        storageBucket: "nexuscrm-46c45.firebasestorage.app",
+        messagingSenderId: "883965610779",
+        appId: "1:883965610779:web:7123c90c3f5a9c0a2761be"
+    };
+    
+    if (!firebase.apps.length) { firebase.initializeApp(nexusConfig); }
+    const dbNexus = firebase.firestore();
+    const telCliente = "7714318134";
+
+    window.addEventListener('DOMContentLoaded', () => {
+        dbNexus.collection("clientes").where("telefono", "==", telCliente).get().then((query) => {
+            if(!query.empty) {
+                query.forEach((doc) => {
+                    dbNexus.collection("clientes").doc(doc.id).update({
+                        visitas: firebase.firestore.FieldValue.increment(1)
+                    });
+                });
+            }
+        });
+    });
+</script>
+  </body>
+</html>
